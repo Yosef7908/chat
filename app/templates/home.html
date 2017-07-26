@@ -1,0 +1,52 @@
+<div id="page-container" class="header-fixed-top">
+    <div id="main-container">
+        <header class="navbar navbar-inverse navbar-fixed-top">
+            <ul class="nav navbar-nav-custom">
+                <li class="hidden-xs">
+                    <a href="#">
+                        <strong>BLOC CHAT</strong>
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <!-- /. HEADER -->
+        <div id="page-content" class="inner-sidebar-left">
+            <div id="page-content-sidebar">
+                <div class="block-section">
+                    <a href="#modal-create" class="btn btn-block btn-success" data-toggle="modal">
+                        <i class="fa fa-pencil"></i>
+                        Create Chat Room
+                    </a>
+                </div>
+                <!-- /. header -->
+                <div id="chat-nav" class="collapse navbar-collapse remove-padding">
+                    <div class="block-section">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li ng-repeat="room in home.rooms">
+                                <a href="#">
+                                    <i class="fa fa-fw fa-folder-open icon-push"></i>
+                                    <strong>{{room.$value}}</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- create chat room -->
+<div id="modal-create" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3 class="modal-title">Create Chat Room</h3>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
