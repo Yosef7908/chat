@@ -2,7 +2,12 @@
     function ModalCtrl(Room, $uibModalInstance) {
 
         this.dismiss = function() {
-          $uibModalInstance.dismiss('cancel');
+          $uibModalInstance.close();
+        };
+
+        this.createRoom = function() {
+            Room.add(this.newRoom);
+            $uibModalInstance.close();
         };
 
     }
