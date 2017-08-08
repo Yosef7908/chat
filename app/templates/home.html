@@ -38,7 +38,11 @@
                   </div>
                 </div>
               </div>
-              <p ng-repeat="message in home.messages">{{ message.content }}  <span class="pull-right">{{ message.sentAt }}</span></p>
+              <p ng-repeat="message in home.messages">
+                <span class="chat-username"><strong>{{ message.username }}</strong></span> <span class="pull-right">{{ message.sentAt }}</span>
+                <br />
+                {{ message.content }}
+              </p>
               <div id="new-message" ng-show="home.currentRoom !== null" style="margin-bottom: 10px;">
                 <form ng-submit="home.sendMessage(home.newMessage, home.currentRoom)">
                   <textarea class="form-control push-10" placeholder="Your Message.." rows="5" ng-model="home.newMessage" title="message"></textarea>
