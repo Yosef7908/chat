@@ -12,15 +12,20 @@
 	          });
 	        }
 
-	    this.storeRoomName = function(room) {
-	    	this.currentRoom = room;
-            this.messages = Message.getByRoomId(this.currentRoom.$id);
-	    }
+          this.storeRoomName = function (room) {
+              this.currentRoom = room;
+              this.messages = Message.getByRoomId(this.currentRoom.$id);
+              console.log(this.currentRoom);
+            }
 
+          this.sendMessage = function () {
+              Message.send(this.newMessage, this.currentRoom);
+              this.newMessage = "";
+            };
 
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Room', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();

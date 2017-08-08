@@ -28,7 +28,26 @@
                         </ul>
                     </div>
                 </div>
+            </div> <!-- /. left sidebar -->
+
+            <div class="block overflow-hidden" id="list-messages">
+              <div class="block-title clearfix">
+                <div class="block-options pull-left">
+                  <div class="block-options-text">
+                    {{ home.currentRoom.name }}
+                  </div>
+                </div>
+              </div>
+              <p ng-repeat="message in home.messages">{{ message.content }}  <span class="pull-right">{{ message.sentAt }}</span></p>
+              <div id="new-message" ng-show="home.currentRoom !== null" style="margin-bottom: 10px;">
+                <form ng-submit="home.sendMessage(home.newMessage, home.currentRoom)">
+                  <textarea class="form-control push-10" placeholder="Your Message.." rows="5" ng-model="home.newMessage" title="message"></textarea>
+                  <button class="btn btn-sm btn-primary" type="button" ng-click="home.sendMessage()">Send</button>
+                </form>
+              </div>
             </div>
+
+
         </div>
     </div>
 </div>
